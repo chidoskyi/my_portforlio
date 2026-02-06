@@ -290,7 +290,7 @@ if (skillProgressBars.length > 0) {
 }
 
 // ========================================
-// CONTACT FORM
+// CONTACT FORM WITH EMAILJS
 // ========================================
 const contactForm = document.getElementById('contact-form');
 
@@ -298,13 +298,11 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Get form data
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value
-    };
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
     
     // Validate form
     let isValid = true;
@@ -356,8 +354,23 @@ if (contactForm) {
     submitBtn.disabled = true;
     submitBtn.querySelector('span').textContent = 'Sending...';
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
+    try {
+      // Send email using EmailJS
+      // Replace these with your EmailJS credentials from https://www.emailjs.com/
+      const serviceID = 'YOUR_SERVICE_ID'; // e.g., 'service_abc123'
+      const templateID = 'YOUR_TEMPLATE_ID'; // e.g., 'template_xyz789'
+      const publicKey = 'YOUR_PUBLIC_KEY'; // e.g., 'abcd1234efgh5678'
+      
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_email: 'okpalachidiebere99@gmail.com'
+      };
+      
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+      
       // Success state
       submitBtn.querySelector('span').textContent = 'Message Sent!';
       submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
@@ -372,8 +385,20 @@ if (contactForm) {
         submitBtn.style.background = '';
       }, 3000);
       
-      console.log('Form submitted:', formData);
-    }, 1500);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      
+      // Error state
+      submitBtn.querySelector('span').textContent = 'Failed to Send';
+      submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+      
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span').textContent = originalText;
+        submitBtn.style.background = '';
+      }, 3000);
+    }
   });
   
   // Real-time validation
@@ -403,6 +428,7 @@ if (contactForm) {
     });
   });
 }
+
 
 // ========================================
 // CONTACT SECTION ANIMATIONS
