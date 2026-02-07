@@ -13,12 +13,11 @@
     <script>
         // Initialize EmailJS with your public key
         (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this
+            emailjs.init("Il7uz5X8N0zL3ZW9t"); // You'll need to replace this
         })();
     </script>
-  
-  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flandingpa9430back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.17"></script>
-  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+
+    <script src="assets/js/data.js"></script>
   </head>
 <body class="antialiased">
     
@@ -30,10 +29,11 @@
     <nav id="nav" class="nav">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <span class="nav-logo-text">DEV</span>
+                <span class="nav-logo-text">Nexphixs Dev</span>
             </a>
             
             <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -81,8 +81,14 @@
                 
                 <h1 class="hero-title" id="hero-title">
                     <span class="hero-title-line">Full-Stack</span>
-                    <span class="hero-title-line hero-title-accent">Developer.</span>
-                    <span class="hero-title-line">Designer.</span>
+                    <span class="hero-title-line hero-title-accent">Developer.</span> 
+                    <div class="text-md">
+                        I'm
+                        <div>
+                            <span class="multi-text">Coder</span>
+                            <span class="blink"></span>
+                        </div>
+                    </div>
                 </h1>
                 
                 <p class="hero-description" id="hero-description">
@@ -218,143 +224,127 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="work" class="portfolio">
-        <div class="portfolio-container">
-            <div class="section-header">
-                <span class="section-label">Selected Work</span>
-                <h2 class="section-title">Projects That <span class="section-title-accent">Matter</span></h2>
-            </div>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <!-- About Image -->
+                <div class="about-image-wrapper">
+                    <div class="about-image">
+                        <!-- REPLACE THIS IMAGE WITH YOUR PHOTO -->
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14165126b-1763296768380.png" alt="Your Name - Full Stack Developer">
+                        <div class="about-image-badge">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Available</span>
+                        </div>
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="about-decoration about-decoration-1"></div>
+                    <div class="about-decoration about-decoration-2"></div>
+                </div>
 
-            <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <article class="portfolio-item portfolio-item-large" data-magnetic>
-                    <div class="portfolio-item-image">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1332050cb-1768402326844.png" alt="Modern SaaS dashboard with data visualization charts and analytics interface">
+                <!-- About Text -->
+                <div class="about-text">
+                    <div class="section-header">
+                        <span class="section-label">About Me</span>
+                        <h2 class="section-title">Crafting Digital <span class="section-title-accent">Experiences</span></h2>
                     </div>
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">
-                            <span class="portfolio-item-category">SaaS Platform</span>
-                            <span class="portfolio-item-year">2025</span>
-                        </div>
-                        <h3 class="portfolio-item-title">Analytics Dashboard</h3>
-                        <p class="portfolio-item-description">Real-time data visualization platform built with React and Django REST Framework. Handles 10k+ concurrent users.</p>
-                        <div class="portfolio-item-tech">
-                            <span class="tech-pill">React</span>
-                            <span class="tech-pill">Django</span>
-                            <span class="tech-pill">PostgreSQL</span>
-                            <span class="tech-pill">Redis</span>
-                        </div>
-                        <div class="portfolio-item-links">
-                            <a href="#" class="portfolio-link">
-                                <span>View Project</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="portfolio-link">
-                                <span>GitHub</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- Project 2 -->
-                <article class="portfolio-item" data-magnetic>
-                    <div class="portfolio-item-image">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1eb7c1cb3-1764655134961.png" alt="E-commerce website showing product catalog with modern shopping cart interface">
+                    <div class="about-description">
+                        <p>
+                            I'm a passionate full-stack developer with over 5 years of experience building modern web applications. 
+                            My journey in tech began with a curiosity for how things work, which evolved into a career dedicated to 
+                            creating seamless digital experiences.
+                        </p>
+                        <p>
+                            I specialize in React, Django, and TypeScript, combining powerful backend systems with beautiful, 
+                            intuitive user interfaces. Every project I take on is an opportunity to push boundaries and deliver 
+                            solutions that make a real impact.
+                        </p>
+                        <p>
+                            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+                            or sharing knowledge with the developer community. I believe in continuous learning and staying ahead 
+                            of the curve in this ever-evolving field.
+                        </p>
                     </div>
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">
-                            <span class="portfolio-item-category">E-Commerce</span>
-                            <span class="portfolio-item-year">2025</span>
-                        </div>
-                        <h3 class="portfolio-item-title">Fashion Marketplace</h3>
-                        <p class="portfolio-item-description">Full-stack e-commerce platform with Stripe integration and inventory management.</p>
-                        <div class="portfolio-item-tech">
-                            <span class="tech-pill">Next.js</span>
-                            <span class="tech-pill">TypeScript</span>
-                            <span class="tech-pill">Stripe</span>
-                        </div>
-                        <div class="portfolio-item-links">
-                            <a href="#" class="portfolio-link">
-                                <span>View Project</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- Project 3 -->
-                <article class="portfolio-item" data-magnetic>
-                    <div class="portfolio-item-image">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ac9f52e3-1764758855402.png" alt="Blog platform homepage with featured articles and clean typography layout">
-                    </div>
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">
-                            <span class="portfolio-item-category">Content Platform</span>
-                            <span class="portfolio-item-year">2024</span>
-                        </div>
-                        <h3 class="portfolio-item-title">Tech Blog CMS</h3>
-                        <p class="portfolio-item-description">Headless WordPress CMS with React frontend. SEO-optimized and lightning fast.</p>
-                        <div class="portfolio-item-tech">
-                            <span class="tech-pill">React</span>
-                            <span class="tech-pill">WordPress</span>
-                            <span class="tech-pill">GraphQL</span>
-                        </div>
-                        <div class="portfolio-item-links">
-                            <a href="#" class="portfolio-link">
-                                <span>View Project</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                    <!-- Quick Facts -->
+                    <div class="about-facts">
+                        <div class="about-fact">
+                            <div class="about-fact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
                                 </svg>
-                            </a>
+                            </div>
+                            <div class="about-fact-text">
+                                <h4>50+ Projects</h4>
+                                <p>Successfully delivered</p>
+                            </div>
                         </div>
-                    </div>
-                </article>
 
-                <!-- Project 4 -->
-                <article class="portfolio-item portfolio-item-wide" data-magnetic>
-                    <div class="portfolio-item-image">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_197ae51e6-1767459681165.png" alt="Project management dashboard showing task boards and team collaboration tools">
-                    </div>
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">
-                            <span class="portfolio-item-category">Productivity Tool</span>
-                            <span class="portfolio-item-year">2024</span>
-                        </div>
-                        <h3 class="portfolio-item-title">Team Collaboration App</h3>
-                        <p class="portfolio-item-description">Real-time project management tool with WebSocket integration. Built for remote teams.</p>
-                        <div class="portfolio-item-tech">
-                            <span class="tech-pill">React</span>
-                            <span class="tech-pill">Django Channels</span>
-                            <span class="tech-pill">WebSocket</span>
-                            <span class="tech-pill">Docker</span>
-                        </div>
-                        <div class="portfolio-item-links">
-                            <a href="#" class="portfolio-link">
-                                <span>View Project</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                        <div class="about-fact">
+                            <div class="about-fact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                                 </svg>
-                            </a>
-                            <a href="#" class="portfolio-link">
-                                <span>GitHub</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                            </div>
+                            <div class="about-fact-text">
+                                <h4>Happy Clients</h4>
+                                <p>Worldwide</p>
+                            </div>
+                        </div>
+
+                        <div class="about-fact">
+                            <div class="about-fact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                                 </svg>
-                            </a>
+                            </div>
+                            <div class="about-fact-text">
+                                <h4>5 Years</h4>
+                                <p>Experience</p>
+                            </div>
                         </div>
                     </div>
-                </article>
+
+                    <!-- CTA Buttons -->
+                    <div class="about-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Let's Work Together</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                        <a href="#work" class="btn btn-secondary">
+                            <span>View My Work</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+<!-- Portfolio Section -->
+<section id="work" class="portfolio">
+    <div class="portfolio-container">
+        <div class="section-header">
+            <span class="section-label">Selected Work</span>
+            <h2 class="section-title">Projects That <span class="section-title-accent">Matter</span></h2>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Portfolio items will be dynamically inserted here by JavaScript from data.js -->
+        </div>
+    </div>
+</section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
@@ -716,6 +706,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+<!-- <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script> -->
 </body>
 </html>
