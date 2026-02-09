@@ -5,18 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Project Details | Full Stack Developer</title>
     <meta name="description" content="Full stack development project showcase">
+    <meta name="robots" content="index, follow">
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="View our web design portfolio showing our best web design projects in Nigeria. See examples of Website Designer Nigeria works across different business niches.">
+
+    <!-- Meta Keywords (SEO optimized) -->
+    <meta name="keywords"
+        content="web designer in Lagos, web design company in Lagos, website development services, best web designers in Nigeria, web designers in nigeria, website designer nigeria, web developers in nigeria, seo company in nigeria, website design agency, best web design company in nigeria, web developer in Nigeria">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Website Designer Nigeria - Best Web Designers in Nigeria">
+    <meta name="twitter:description"
+        content="Website Designer Nigeria is a web design company in Lagos &amp; Abuja that offers website development services. We are the best web designers in Nigeria.">
+    <meta name="twitter:image" content="/static/img/favicon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Web Design Portfolio - Website Designer Nigeria">
+    <meta property="og:description"
+        content="View our web design portfolio showing our best web design projects in Nigeria. See examples of Website Designer Nigeria works across different business niches.">
+    <meta property="og:image" content="/static/img/favicon.png">
+    <meta property="og:url" content="https://websitedesigner.ng">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/955d8bdaab.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/data.js"></script>
 </head>
+
 <body class="antialiased">
-    
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <div id="cursor-follower" class="cursor-follower"></div>
+
     <!-- Navigation -->
     <nav id="nav" class="nav" style="opacity: 1; transform: translateY(0);">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <span class="nav-logo-text">Nexphixs Dev</span>
             </a>
-            
+
             <div class="nav-links">
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="index.html#work" class="nav-link">Work</a>
@@ -26,25 +61,27 @@
 
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"/>
-                        <line x1="12" y1="1" x2="12" y2="3"/>
-                        <line x1="12" y1="21" x2="12" y2="23"/>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                        <line x1="1" y1="12" x2="3" y2="12"/>
-                        <line x1="21" y1="12" x2="23" y2="12"/>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                     </svg>
-                    <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                     </svg>
                 </button>
                 <a href="index.html#contact" class="nav-cta">Hire Me</a>
             </div>
         </div>
-        
+
         <div class="scroll-progress"></div>
     </nav>
 
@@ -66,19 +103,32 @@
                     <div class="footer-nav-group">
                         <h4 class="footer-nav-title">Navigation</h4>
                         <ul class="footer-nav-list">
-                            <li><a href="index.html#about" class="footer-link">About</a></li>
-                            <li><a href="index.html#work" class="footer-link">Work</a></li>
-                            <li><a href="index.html#skills" class="footer-link">Skills</a></li>
-                            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+                            <li><a href="#work" class="footer-link">Work</a></li>
+                            <li><a href="#skills" class="footer-link">Skills</a></li>
+                            <li><a href="#testimonials" class="footer-link">Testimonials</a></li>
+                            <li><a href="#contact" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav-group">
+                        <h4 class="footer-nav-title">Services</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="#" class="footer-link">Web Development</a></li>
+                            <li><a href="#" class="footer-link">UI/UX Design</a></li>
+                            <li><a href="#" class="footer-link">API Integration</a></li>
+                            <li><a href="#" class="footer-link">Consulting</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-nav-group">
                         <h4 class="footer-nav-title">Connect</h4>
                         <ul class="footer-nav-list">
-                            <li><a href="https://github.com/developer" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
-                            <li><a href="https://linkedin.com/in/developer" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
-                            <li><a href="https://twitter.com/developer" target="_blank" rel="noopener noreferrer" class="footer-link">Twitter</a></li>
+                            <li><a href="https://github.com/developer" target="_blank" rel="noopener noreferrer"
+                                    class="footer-link">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/developer" target="_blank" rel="noopener noreferrer"
+                                    class="footer-link">LinkedIn</a></li>
+                            <li><a href="https://twitter.com/developer" target="_blank" rel="noopener noreferrer"
+                                    class="footer-link">Twitter</a></li>
                             <li><a href="mailto:okpalachidiebere99@gmail.com" class="footer-link">Email</a></li>
                         </ul>
                     </div>
@@ -87,29 +137,60 @@
 
             <div class="footer-bottom">
                 <p class="footer-copyright">© 2026 Full Stack Developer. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/developer" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/developer" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.385v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/developer" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+    <!-- WhatsApp Widget-->
+    <div class="fixed bottom-6 left-6 z-50">
+        <a href="https://wa.link/k9n3kh" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            title="Chat with me">
+            <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+            <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+        </a>
+    </div>
 
-    
     <script>
         // Get project ID from URL
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('id');
-        
+
         // Get project data
         const project = getProjectById(projectId);
-        
+
         if (!project) {
             // Redirect to home if project not found
             window.location.href = 'index.html#work';
         } else {
             // Update page title
             document.getElementById('page-title').textContent = `${project.title} - Project Details | Full Stack Developer`;
-            
+
             // Get next project
             const nextProject = getNextProject(projectId);
-            
+
             // Helper function to get SVG icon
             function getIconSVG(iconName) {
                 const icons = {
@@ -130,10 +211,10 @@
                 };
                 return icons[iconName] || '';
             }
-            
+
             // Render project detail page
             const contentContainer = document.getElementById('project-content');
-            
+
             contentContainer.innerHTML = `
                 <!-- Project Detail Hero -->
                 <section class="project-hero">
@@ -305,7 +386,7 @@
                 </section>
             `;
         }
-        
+
         // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
@@ -334,6 +415,56 @@
             const progress = (scrollTop / scrollHeight) * 100;
             scrollProgress.style.width = `${progress}%`;
         });
+
+        // ========================================
+        // CUSTOM CURSOR
+        // ========================================
+        const cursor = document.getElementById('custom-cursor');
+        const follower = document.getElementById('cursor-follower');
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            // Cursor (fast)
+            cursorX += (mouseX - cursorX) * 0.3;
+            cursorY += (mouseY - cursorY) * 0.3;
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+
+            // Follower (slow)
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            follower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
+        // Cursor hover effects
+        const magneticElements = document.querySelectorAll('[data-magnetic], a, button');
+
+        magneticElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                follower.classList.add('hover');
+            });
+
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                follower.classList.remove('hover');
+            });
+        });
     </script>
 </body>
+
 </html>

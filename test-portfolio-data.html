@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Data Test</title>
+    <script src="assets/js/data.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .info { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        ul { background: white; padding: 20px; border-radius: 8px; }
+        li { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Portfolio Data Test</h1>
+    <div id="output">Testing...</div>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        console.log('Testing portfolioData...', typeof portfolioData);
+        
+        if (typeof portfolioData === 'undefined') {
+            output.innerHTML = `
+                <p class="error">❌ ERROR: data.js not loaded!</p>
+                <div class="info">
+                    <h3>Troubleshooting:</h3>
+                    <ol>
+                        <li>Make sure <code>data.js</code> is in the same folder as this HTML file</li>
+                        <li>Check browser console (F12) for 404 errors</li>
+                        <li>Try renaming <code>data-extended.js</code> to <code>data.js</code></li>
+                    </ol>
+                </div>
+            `;
+        } else if (!portfolioData.projects) {
+            output.innerHTML = `
+                <p class="error">❌ ERROR: portfolioData exists but has no projects!</p>
+                <div class="info">
+                    <p>Check if data.js has this structure:</p>
+                    <pre>const portfolioData = {
+  projects: [ ... ]
+};</pre>
+                </div>
+            `;
+        } else {
+            output.innerHTML = `
+                <p class="success">✅ SUCCESS! Data loaded correctly!</p>
+                <div class="info">
+                    <p><strong>Total Projects:</strong> ${portfolioData.projects.length}</p>
+                    <p><strong>Categories:</strong> ${[...new Set(portfolioData.projects.map(p => p.category))].join(', ')}</p>
+                </div>
+                <h2>Project List:</h2>
+                <ul>
+                    ${portfolioData.projects.map(p => `
+                        <li>
+                            <strong>${p.title}</strong><br>
+                            Category: ${p.category} | Year: ${p.year}<br>
+                            Tech: ${p.technologies.join(', ')}
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>

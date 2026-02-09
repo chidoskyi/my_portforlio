@@ -162,6 +162,11 @@ body {
   opacity: 0.5;
 }
 
+#custom-cursor.is-scrolling {
+  transform: scale(0.5);
+  opacity: 0.5;
+}
+
 .cursor-follower.hover {
   transform: scale(1.5);
   opacity: 0.3;
@@ -212,9 +217,13 @@ body {
 }
 
 .nav-logo-text {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-links {
@@ -1204,6 +1213,27 @@ body {
   font-style: italic;
 }
 
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-header h2 {
+  margin: 0;
+}
+
+.view-link a {
+  text-decoration: none;
+  color: inherit; 
+  transition: color 0.3s ease; 
+}
+
+/* The hover state you requested */
+.view-link a:hover {
+  color: #00D9FF;
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1257,6 +1287,7 @@ body {
   }
 }
 
+/* Portfolio Image Container - Base styles */
 .portfolio-item-image {
   position: relative;
   width: 100%;
@@ -1276,17 +1307,132 @@ body {
   height: 260px;
 }
 
-.portfolio-item-image img {
+/* Portfolio Image Scroll System - FIXED VERSION */
+.portfolio-item-image.portfolio-image-container {
+    height: 250px !important;
+    min-height: 250px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: var(--color-bg);
+    cursor: pointer !important;
+    width: 100% !important;
+}
+
+/* Image wrapper */
+.portfolio-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image styles for scrolling */
+.portfolio-screenshot {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100%;
+    display: block;
+    transition: transform 4s ease-in-out !important;
+    transform: translateY(0);
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/* Disable the scale-up effect for scrollable images */
+.portfolio-item:hover .portfolio-screenshot {
+  transform: none !important;
+}
+
+/* Click to scroll label - CSS fallback */
+.click-to-scroll-label {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Expand icon - CSS fallback */
+.expand-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: black;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+    font-size: 10px;
+}
+
+/* Show on hover - CSS version (works alongside Tailwind) */
+.group:hover .click-to-scroll-label,
+.group:hover .expand-icon {
+    opacity: 1;
+}
+
+/* Add gradient overlay for better label visibility */
+.portfolio-image-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.group:hover .portfolio-image-container::before {
+    opacity: 1;
+}
+
+/* Add smooth scrolling back effect */
+.portfolio-screenshot[style*="transform: translateY(0%)"] {
+  transition: transform 2s ease-in-out !important;
+}
+
+/* Default image styles (for non-scrollable images) */
+.portfolio-item-image img:not(.portfolio-screenshot) {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
 
-.portfolio-item:hover .portfolio-item-image img {
+.portfolio-item:hover .portfolio-item-image img:not(.portfolio-screenshot) {
   transform: scale(1.05);
 }
 
+/* Portfolio item content */
 .portfolio-item-content {
   padding: 1.25rem;
   display: flex;
@@ -1307,6 +1453,15 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px 4px 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  position: relative;
 }
 
 .portfolio-item-year {
@@ -1379,6 +1534,193 @@ body {
 
 .portfolio-link:hover svg {
   transform: translateX(2px);
+}
+
+/* Portfolio Page Specific Styles */
+.portfolio-page {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+}
+
+.portfolio-page-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.portfolio-page-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.portfolio-page-description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 48px;
+    padding: 0 20px;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    border: 2px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    border-color: transparent;
+    color: white;
+}
+
+.portfolio-stats {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 0 20px;
+}
+
+.portfolio-count {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.portfolio-count strong {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 64px;
+    padding: 0 20px;
+}
+
+.pagination-btn {
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination-btn.active {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    border-color: transparent;
+    color: white;
+}
+
+.pagination-ellipsis {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+}
+
+/* Loading State */
+.portfolio-loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+}
+
+.portfolio-empty {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.portfolio-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+    opacity: 0.3;
+}
+
+.portfolio-empty-text {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portfolio-page {
+        padding: 100px 0 60px;
+    }
+    
+    .pagination {
+        gap: 4px;
+    }
+    
+    .pagination-btn {
+        min-width: 40px;
+        height: 40px;
+        font-size: 0.875rem;
+    }
+    
+    .pagination-ellipsis {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Fix for large portfolio items */
+.portfolio-item-large .portfolio-image-container {
+    height: 280px !important;
+    min-height: 280px !important;
+}
+
+/* Ensure the click to scroll works on all containers */
+.portfolio-item .portfolio-image-container {
+    position: relative;
 }
 
 /* ========================================
@@ -1633,7 +1975,14 @@ body {
   overflow: hidden;
   border: 2px solid var(--color-border);
   flex-shrink: 0;
+  background-color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
 }
+
 
 .testimonial-avatar img {
   width: 100%;
@@ -1936,7 +2285,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--color-text);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
