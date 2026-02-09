@@ -18,7 +18,7 @@ console.log("data loaded")
       shortDescription:
         'Fast and reliable grocery delivery platform with modern UI.',
 
-      image: 'public/Shop-grocery.png',
+      image: 'public/Shop-Grocery.png',
       imageAlt: 'Grocery e-commerce homepage showing food products and categories',
 
       technologies: ['nextjs', 'typescript', 'tailwind'],
